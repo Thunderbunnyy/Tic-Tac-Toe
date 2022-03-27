@@ -19,7 +19,6 @@ class _GameViewState extends State<GameView> {
 
   var data = GameViewModel();
 
-
   @override
   void initState() {
     super.initState();
@@ -35,6 +34,7 @@ class _GameViewState extends State<GameView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: data.getBackgroundColor(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children:
@@ -57,14 +57,17 @@ class _GameViewState extends State<GameView> {
     );
   }
 
+
   Widget buildField(int x, int y){
     final value = matrix[x][y];
-    
+    final color = data.getFieldColor(value);
+
     return Container(
       margin: EdgeInsets.all(4),
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            primary: Colors.white,
+            minimumSize: Size(size,size),
+            primary: color,
             elevation: 2.0
           ),
           onPressed: (){

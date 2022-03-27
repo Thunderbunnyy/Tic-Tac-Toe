@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:tictactoe_nourelhouda_eleuch/Singletons/data.dart';
+import 'package:tictactoe_nourelhouda_eleuch/config/constants.dart';
 import 'package:tictactoe_nourelhouda_eleuch/models/players_model.dart';
 
 class GameViewModel {
@@ -29,13 +32,23 @@ class GameViewModel {
 
   }
 
-  // getFieldColor(String value) {
-  //
-  //   switch(value){
-  //     default:Colors.
-  //   }
-  //
-  // }
+  getFieldColor(String? value) {
+
+    if(value == playerModel.O) return kPrimaryColor;
+
+    else if (value == playerModel.X) return kTertiaryColor;
+    else return white;
+
+  }
+
+  getBackgroundColor() {
+
+    appData.currentMove =  appData.lastMove == playerModel.X ? PlayerModel().O : PlayerModel().X;
+    
+    return getFieldColor(appData.currentMove);
+
+  }
+
 
 
   }

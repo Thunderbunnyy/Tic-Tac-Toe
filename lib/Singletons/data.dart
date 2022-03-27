@@ -8,6 +8,7 @@ class AppData {
 
   String? newValue;
   String? lastMove;
+  String? currentMove;
 
   AppData._internal();
 

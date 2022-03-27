@@ -20,6 +20,7 @@ class _HomeViewState extends State<HomeView> {
         alignment: Alignment.center,
         padding: EdgeInsets.all(size.width / 8,),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               child: Column(
@@ -54,6 +55,9 @@ class _HomeViewState extends State<HomeView> {
                   onPressed: () {},
                   child: Text(
                     'Single Player',
+                    style: TextStyle(
+                        color: Colors.black
+                    ),
                   ),
                 ),
               ),
@@ -75,7 +79,7 @@ class _HomeViewState extends State<HomeView> {
                   child: Text(
                     'With A Friend',
                     style: TextStyle(
-                      color:
+                      color: Colors.black
                     ),
                   ),
                 ),
