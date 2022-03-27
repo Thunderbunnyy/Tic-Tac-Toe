@@ -17,6 +17,7 @@ class _GameViewState extends State<GameView> {
 
   var data = GameViewModel();
 
+
   @override
   void initState() {
     super.initState();
@@ -68,6 +69,7 @@ class _GameViewState extends State<GameView> {
 
             data.selectField(value, x, y);
             setState(() {
+              appData.lastMove = appData.newValue;
               matrix[x][y] = appData.newValue!;
             });
           },

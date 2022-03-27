@@ -1,6 +1,0 @@
-class GameModel {
-
-  String? lastMove;
-
-
-}
