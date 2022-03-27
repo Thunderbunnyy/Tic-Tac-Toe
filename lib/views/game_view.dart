@@ -13,7 +13,7 @@ class GameView extends StatefulWidget {
 class _GameViewState extends State<GameView> {
 
   static final countMatrix = 3;
-  static final double size = 90;
+  static final double size = 100;
 
   List<List<String>> matrix = [];
 

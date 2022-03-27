@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tictactoe_nourelhouda_eleuch/config/constants.dart';
 
 import 'game_view.dart';
 
@@ -16,7 +17,8 @@ class _HomeViewState extends State<HomeView> {
 
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.only(top: size.height / 9, right: size.width / 5),
+        alignment: Alignment.center,
+        padding: EdgeInsets.all(size.width / 8,),
         child: Column(
           children: [
             Container(
@@ -27,34 +29,55 @@ class _HomeViewState extends State<HomeView> {
                           fontSize: 50.0,
                           fontWeight: FontWeight.bold,
                           color: Colors.black)),
-                  Row(
-                    children: [],
+
+                  Padding(
+                    padding: const EdgeInsets.only(top : 30.0),
+                    child: Row(
+
+                      children: [
+                        Image.asset("assets/images/o.png",width: 150, height: 80.0,),
+                        Image.asset("assets/images/X.png",width: 150, height: 80.0,)
+                      ],
+                    ),
                   ),
                 ],
               ),
             ),
-            Container(
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  'Single Player',
+            Padding(
+              padding: const EdgeInsets.only(top : 30.0),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: kPrimaryColor,
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                    border: Border.all(color: Colors.transparent, width: 2.0)),
+                child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Single Player',
+                  ),
                 ),
               ),
             ),
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                  border: Border.all(color: Colors.transparent, width: 2.0)),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const GameView()),
-                  );
-                },
-                child: Text(
-                  'With A Friend',
+            Padding(
+              padding: const EdgeInsets.only(top : 30.0),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: kPrimaryColor,
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                    border: Border.all(color: Colors.transparent, width: 2.0)),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const GameView()),
+                    );
+                  },
+                  child: Text(
+                    'With A Friend',
+                    style: TextStyle(
+                      color:
+                    ),
+                  ),
                 ),
               ),
             )
