@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tictactoe_nourelhouda_eleuch/Singletons/data.dart';
 import 'package:tictactoe_nourelhouda_eleuch/utils/gridBuilderUtil.dart';
 import 'package:tictactoe_nourelhouda_eleuch/view_models/game_view_model.dart';
 
@@ -63,7 +64,13 @@ class _GameViewState extends State<GameView> {
             primary: Colors.white,
             elevation: 2.0
           ),
-          onPressed: (){},
+          onPressed: (){
+
+            data.selectField(value, x, y);
+            setState(() {
+              matrix[x][y] = appData.newValue!;
+            });
+          },
           child: Text(value,style: TextStyle(fontSize: 30),)
       ),
     );
