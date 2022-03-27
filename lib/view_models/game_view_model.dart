@@ -29,5 +29,13 @@ class GameViewModel {
 
   }
 
+  // getFieldColor(String value) {
+  //
+  //   switch(value){
+  //     default:Colors.
+  //   }
+  //
+  // }
+
 
   }

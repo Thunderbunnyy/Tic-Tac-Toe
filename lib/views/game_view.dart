@@ -4,6 +4,8 @@ import 'package:tictactoe_nourelhouda_eleuch/utils/gridBuilderUtil.dart';
 import 'package:tictactoe_nourelhouda_eleuch/view_models/game_view_model.dart';
 
 class GameView extends StatefulWidget {
+  const GameView({Key? key}) : super(key: key);
+
   @override
   _GameViewState createState() => _GameViewState();
 }
@@ -73,7 +75,10 @@ class _GameViewState extends State<GameView> {
               matrix[x][y] = appData.newValue!;
             });
           },
-          child: Text(value,style: TextStyle(fontSize: 30),)
+          child: Text(value,
+            style: TextStyle(fontSize: 30,color: Colors.black),
+
+          )
       ),
     );
     
