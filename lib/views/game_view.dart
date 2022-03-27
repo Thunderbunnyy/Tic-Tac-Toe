@@ -57,6 +57,44 @@ class _GameViewState extends State<GameView> {
     );
   }
 
+  Future showWinner(String title) {
+    return showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0),
+
+          ),
+          title: Text(title),
+          content: Text('GG Anyway'),
+          actions: [
+            TextButton(onPressed: (){
+
+              setEmptyFields();
+              Navigator.of(context).pop();
+            },
+                child: Text('Play Again !'))
+          ],
+        ));
+  }
+
+  bool isWinner(int x, int y) {
+    var col = 0, row = 0, diag = 0, rdiag = 0;
+    final player = matrix[x][y];
+    final n = countMatrix;
+
+    for (int i = 0; i < n; i++) {
+      if (matrix[x][i] == player) col++;
+      if (matrix[i][y] == player) row++;
+      if (matrix[i][i] == player) diag++;
+      if (matrix[i][n - i - 1] == player) rdiag++;
+    }
+
+    return row == n || col == n || diag == n || rdiag == n;
+  }
+
+  bool welpNoOneWon() => matrix.every((values) => values.every((value) => value != data.getPlayerNone()));
 
   Widget buildField(int x, int y){
     final value = matrix[x][y];
@@ -77,6 +115,13 @@ class _GameViewState extends State<GameView> {
               appData.lastMove = appData.newValue;
               matrix[x][y] = appData.newValue!;
             });
+            
+            if(isWinner(x, y)){
+              showWinner('${appData.newValue} Is the Winner !!');
+            } else if (welpNoOneWon()){
+              showWinner('welp, maybe get better lol ');
+            }
+
           },
           child: Text(value,
             style: TextStyle(fontSize: 30,color: Colors.black),

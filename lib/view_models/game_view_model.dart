@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
 import 'package:tictactoe_nourelhouda_eleuch/Singletons/data.dart';
 import 'package:tictactoe_nourelhouda_eleuch/config/constants.dart';
 import 'package:tictactoe_nourelhouda_eleuch/models/players_model.dart';
@@ -30,6 +31,8 @@ class GameViewModel {
 
     }
 
+
+
   }
 
   getFieldColor(String? value) {
@@ -48,7 +51,6 @@ class GameViewModel {
     return getFieldColor(appData.currentMove);
 
   }
-
 
 
   }
